@@ -1,0 +1,2 @@
+serviceClass: th.ac.utcc.chonburi.client.GreetingService
+path: 1167568FE3B428F6F248361F7951DDB2.gwt.rpc
