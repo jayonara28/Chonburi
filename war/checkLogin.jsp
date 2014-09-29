@@ -13,7 +13,7 @@
 	if(strUsername.equals(dbUsername) && strPassword.equals(dbPassword)){
 		out.println("Login successfully");
 		session.setAttribute("username_ses",dbUsername);
-		session.setAttribute("username_ses",dbName);
+		session.setAttribute("name_ses",dbName);
 		response.sendRedirect("index.jsp");
 	}
 	else{

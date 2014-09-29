@@ -3,7 +3,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
  
   <%
-  	String getusername_ses = (String)session.getAttribute("username_ses");
+  	String getname_ses = (String)session.getAttribute("name_ses");
   
   %>  
 <!DOCTYPE html>
@@ -64,9 +64,9 @@
 
           
           <ul class="nav navbar-nav navbar-right">
-            <% if(null!=getusername_ses){ %>
+            <% if(getname_ses!=null){ %>
             	<li>
-                    <a href="#">สวัสดีคุณ&nbsp;<%=getusername_ses %></a>
+                    <a href="#">สวัสดีคุณ&nbsp;<%=getname_ses %></a>
                 </li>
                 <li>
                     <a href="logout.jsp">ออกจากระบบ</a>
