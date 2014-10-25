@@ -92,7 +92,7 @@
 
 </div>
 <div class="container">
-  <div><p></p></div>
+  <div><marquee onmouseover="this.stop();" onmouseout="this.start();" id="result"></marquee></div>
   <div class="row">
     <div class="col-lg-4">
       <div class="panel panel-default">
@@ -131,5 +131,20 @@
             });
             
         </script>
+        
+        
+<script>
+	var xmlhttp = new XMLHttpRequest();
+
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200){ 
+			document.getElementById("result").innerHTML = xmlhttp.responseText;		
+		}
+	}
+
+	var url="calltext.jsp";
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+</script>        
 </body>
 </html>
