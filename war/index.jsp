@@ -11,9 +11,8 @@
 <head>
   <meta charset="utf-8">
   <title>::::CHONBURI::::</title>
-  <meta equiv="Content-Type" content="text/html; charset=TIS-620">
 
-   
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">    
@@ -117,6 +116,12 @@
   </div>
   
 </div>
+
+<h3>แนะนำสถานที่ท่องเที่ยว</h3>
+<div class="col-lg-9" id="place"></div>
+
+
+
 </div>
 
 
@@ -124,6 +129,8 @@
 
 
 <script src="js/jquery-1.10.2.min.js"></script>
+
+
         <script src="js/bootstrap.min.js"></script>
         <script>
             $(document).ready(function (){
@@ -145,6 +152,30 @@
 	var url="calltext.jsp";
 	xmlhttp.open("GET",url,true);
 	xmlhttp.send();
-</script>        
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+var data = '{"location":['+
+'{"lname":"สวนนงนุช","lpic":"nongnooch1.jpg","ldetail":"เป็นสถานที่พักผ่อนหย่อนใจในพื้นที่กว่า 1,500 ไร่ ภายในมีสวนไม้ดอกไม้ประดับนานาชนิด สวนรถไฟจำลอง สโตนเฮนจ์ ฯลฯ พร้อมที่พักเป็นเรือนไม้สักทรงไทย มีห้องประชุมสัมมนา สวนสัตว์ และศูนย์แสดงศิลปวัฒนธรรมไทย ประกอบด้วยการฟ้อนรำพื้นเมือง ศิลปะการต่อสู้ป้องกันตัว กีฬาพื้นบ้าน และการแสดงของช้าง" },'+
+'{"lname":"ปราสาทสัจธรรม","lpic":"sanctruth1.jpg","ldetail":"ตั้งอยู่ ณ บริเวณอ่าววงพระจันทร์ แหลมราชเวช ตำบลนาเกลือ ในเนื้อที่  80 ไร่ งดงามด้วยสถาปัตยกรรมไม้ขนาดใหญ่ที่สุดของโลก ชาวบ้านโดยทั่วไปเรียกว่าวังโบราณ บ้างก็เรียกตามวัสดุของตัวอาคารว่าปราสาทไม้ โดยเริ่มก่อสร้างขึ้นเมื่อปี พ.ศ. 2524 จวบจนปัจจุบันก็ยังไม่เสร็จสมบูรณ์" },'+
+'{"lname":"อันเดอร์วอเตอร์ เวิลด์ พัทยา","lpic":"underwater1.jpg","ldetail":"เป็นสถานที่ท่องเที่ยวซึ่งทำให้ผู้มาเยือนเหมือนกับได้เดินทางดำดิ่งลงสู่โลกใต้ทะเล โดยเริ่มจากชายฝั่งอันเป็นหาดทรายและแก่งหิน ลงลึกไปยังดงปะการังสีสันสดใส จนถึงท้องทะเลลึก นักท่องเที่ยวจะได้เข้าชมในอุโมงค์ซึ่งสร้างเป็นทางลอดไปในอควาเรียมขนาดใหญ่ ที่จำลองสภาพแวดล้อมธรรมชาติใต้ทะเลไว้อย่างสวยงามและใกล้ชิด" },'+
+'{"lname":"เขาชีจรรย์","lpic":"cheechan1.jpg","ldetail":"เขาชีจรรย์ เป็นเขาหินปูน เดิมมีการระเบิดหินนำไปใช้ในการก่อสร้าง ต่อมาสมเด็จพระญาณสังวร ทรงเสียดายลักษณะภูมิทัศน์อันสง่างามของเขาลูกนี้ จึงมีพระดำริที่จะอนุรักษ์ไว้ และได้ดำเนินการสร้างพระพุทธรูปแกะสลักในลักษณะของพระพุทธฉายที่ใหญ่ที่สุดในโลก" }]}';
+
+	var obj = eval ("("+data+")");
+	for (var i = 0;i<obj.location.length;i++){
+		$("#place").append("<div><h4>"+obj.location[i].lname+"</h4></div>");
+		$("#place").append("<div><img src=\"img/"+obj.location[i].lpic+"\" width=\"200px;\" height=\"130px;\"><br><br>");		
+		$("#place").append("<div>"+obj.location[i].ldetail+"</div>");
+		$("#place").append("<br><br></div>");
+	
+	}//forloop	
+});//document-ready block
+</script>
+
+
+        
 </body>
 </html>
