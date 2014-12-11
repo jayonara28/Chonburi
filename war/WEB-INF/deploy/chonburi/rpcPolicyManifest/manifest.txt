@@ -1,2 +1,3 @@
 # Module chonburi
 # RPC service class, partial path of RPC policy file
+th.ac.utcc.chonburi.client.GreetingService, 1167568FE3B428F6F248361F7951DDB2.gwt.rpc
